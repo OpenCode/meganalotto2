@@ -1,8 +1,13 @@
-function try_work(){
-	alert('dispari');
+function System() {
+	this.name = 'dispari';
+	this.description = 'Un sistema che estra solo numeri casuali dispari';
+	this.version = '1.0';
+	this.developer = "Francesco OpenCode Apruzzese";
+	this.site = "http://www.e-ware.org";
+	this.email = "cescoap@gmail.com";
 	}
 
-function get_table_header() {
+System.prototype.get_table_header = function() {
 	// Generate table header
 	table_header = '<tr>';
 	for (i=1; i<=numbers_limit; i++){
@@ -12,7 +17,7 @@ function get_table_header() {
 	return table_header;
 	}
 
-function get_table_row(){
+System.prototype.get_table_row = function() {
 	// Initialize
 	var numbers = new Array ();
 	for (n=1; n<=limit_max_number; n++){

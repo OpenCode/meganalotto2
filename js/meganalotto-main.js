@@ -23,13 +23,15 @@ function generate() {
 	// Set number limit for each supported game
 	numbers_limit = GAMES_NUMBERS[$('#game_type :selected').val()];
 	limit_max_number = GAMES_NUMBERS_LIMIT[$('#game_type :selected').val()];
-	table_header = get_table_header();
+	var system = new System();
+	table_header = system.get_table_header();
 	table_header = table_header.replace('<tr>', '<tr><th></th>');
 	$('#generate_main_header').append(table_header);
 	for (i=1; i<=repeat_limit; i++){
-		table_row = get_table_row();
+		table_row = system.get_table_row();
 		table_row = table_row.replace('<tr>', '<tr><td><b><i>' + i.toString() + '</i></b></td>');
 		$('#generate_main_body').append(table_row);
 		}
 	$('#post_message').prepend('<h4 id="alert_generated" class="alert_success">Valori generati con sistema ' + sistem_selected + '!</h4>');
+	//system.try_work();
 }
