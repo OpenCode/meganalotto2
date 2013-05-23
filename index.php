@@ -40,7 +40,15 @@
 					non ha conoscenze informatiche può utlizzarlo come fosse un normale sito web. Per chi invece vuole avere il codice sulla propria
 					postazione lo potrà scaricare ed utilizzare al pari di un'altra qualsiasi web app.</p>
 				</div>
-		</article><!-- end of styles article -->
+		</article>
+
+		<article class="module width_full">
+			<header><h3>Un grazie speciale a ...</h3></header>
+				<div class="module_content">
+					<h2><a href="http://www.medialoot.com/">*</a> MediaLoot per il tema gratuito</h2>
+					<h2><a href="http://drublic.github.io/css-modal/">*</a> CssModal per il modal in puro css</h2>
+				</div>
+		</article>
 
 		<div class="spacer"></div>
 	</section>
