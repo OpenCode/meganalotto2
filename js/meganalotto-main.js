@@ -47,7 +47,16 @@ function generate() {
 }
 
 function show_system_info(){
+		// ----- Clear the old data first
+	if ($('#modal-header-system-name')){$('#modal-header-system-name').remove();}
+	if ($('#modal-content-system-developer')){$('#modal-content-system-developer').remove();}
+	if ($('#modal-content-system-version')){$('#modal-content-system-version').remove();}
+	if ($('#modal-content-system-description')){$('#modal-content-system-description').remove();}
 	$('head').append('<script src="js/systems/' + $('#system_type :selected').val() + '.js" type="text/javascript"></script>');
+	// ----- Fill the modal with rigth data
 	var system = new System();
-	alert(system.description);
+	$('#modal-header').append('<h1 id="modal-header-system-name">' + system.name + '</h1>');
+	$('#modal-content').append('<p id="modal-content-system-developer"><b>Autore : </b>' + system.developer + ' «' + system.email + '» - <a href="' + system.site + '" target="_blank">' + system.site + '</a></p>');
+	$('#modal-content').append('<p id="modal-content-system-version"><b>Versione : </b>' + system.version + '</p>');
+	$('#modal-content').append('<p id="modal-content-system-description"><b>Dettagli : </b>' + system.description + '</p>');
 	}

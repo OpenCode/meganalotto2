@@ -15,7 +15,7 @@
 		<div class="breadcrumbs_container">
 			<article class="breadcrumbs"><a href="index.php">Meganalotto</a> <div class="breadcrumb_divider"></div> <a class="current">Generatore</a></article>
 		</div>
-	</section><!-- end of secondary bar -->
+	</section>
 	
 	<?php include_once('template/sidebar.inc.php'); ?>
 	
@@ -45,7 +45,8 @@
 							}
 						?>
 					</select>
-					<input type="submit" value="?" onclick="show_system_info();">
+					<!--input type="submit" value="?" onclick="show_system_info();"-->
+					<a href="#modal-system-info" class="call-modal" title="Clicka su quesa voce per mostrare informazioni sul sistema" onclick="show_system_info();"><input type="submit" value="?"></a>
 					<input type="submit" value="Genera" class="alt_btn" onclick="generate();">
 					<input type="submit" value="Pulisci" onclick="restart_main();">
 					<input type="submit" value="Stampa" onclick="print();">
@@ -60,7 +61,20 @@
 					</tbody> 
 				</table>
 			</div>
-		</article><!-- end of post new article -->
+		</article>
+		
+		<section class="semantic-content" id="modal-system-info" tabindex="-1"
+				role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+			<div class="modal-inner">
+				<header id="modal-header"><!-- Header --></header>
+				<div id="modal-content" class="modal-content"><!-- The modals content --></div>
+				<footer id="modal-footer"><!-- Footer --></footer>
+			</div>
+
+			<a href="#!" class="modal-close" title="Close this modal"
+				data-dismiss="modal">×</a>
+		</section>
 		<div class="spacer"></div>
 	</section>
 
