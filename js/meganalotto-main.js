@@ -1,3 +1,15 @@
+function print(){
+	var prtContent = document.getElementById("system_table");
+	var WinPrint = window.open('', '', 'letf=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+	complete_html = '<html><head><link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />';
+	complete_html += '</head><body>' + prtContent.innerHTML + '</body></html>';
+	WinPrint.document.write(prtContent.innerHTML);
+	WinPrint.document.close();
+	WinPrint.focus();
+	WinPrint.print();
+	WinPrint.close();
+	}
+
 function clear_all(){
 	// Clear existing data
 	if ($('#alert_generated')){
@@ -17,7 +29,6 @@ function generate() {
 	clear_all();
 	// Include system file
 	$('head').append('<script src="js/systems/' + $('#system_type :selected').val() + '.js" type="text/javascript"></script>');
-	// ----- PROVA
 	sistem_selected = $('#system_type :selected').text();
 	repeat_limit = $('#repeat').val();
 	// Set number limit for each supported game
@@ -33,5 +44,10 @@ function generate() {
 		$('#generate_main_body').append(table_row);
 		}
 	$('#post_message').prepend('<h4 id="alert_generated" class="alert_success">Valori generati con sistema ' + sistem_selected + '!</h4>');
-	//system.try_work();
 }
+
+function show_system_info(){
+	$('head').append('<script src="js/systems/' + $('#system_type :selected').val() + '.js" type="text/javascript"></script>');
+	var system = new System();
+	alert(system.description);
+	}

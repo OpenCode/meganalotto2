@@ -45,17 +45,21 @@
 							}
 						?>
 					</select>
-					<input type="submit" value="Genera" class="alt_btn"  onclick="generate();">
-					<input type="submit" value="Pulisci"  onclick="restart_main();">
+					<input type="submit" value="?" onclick="show_system_info();">
+					<input type="submit" value="Genera" class="alt_btn" onclick="generate();">
+					<input type="submit" value="Pulisci" onclick="restart_main();">
+					<input type="submit" value="Stampa" onclick="print();">
 				</div>
 			</header>
-			<table class="tablesorter" cellspacing="0"> 
-				<thead id="generate_main_header"> 
-				</thead> 
-				<tbody id="generate_main_body">
-					<tr><td style="text-align:center;"><img src="images/gear.jpg" /></td></tr>
-				</tbody> 
-			</table>
+			<div id="system_table">
+				<table class="tablesorter" cellspacing="0"> 
+					<thead id="generate_main_header"> 
+					</thead> 
+					<tbody id="generate_main_body">
+						<tr><td style="text-align:center;"><img src="images/gear.jpg" /></td></tr>
+					</tbody> 
+				</table>
+			</div>
 		</article><!-- end of post new article -->
 		<div class="spacer"></div>
 	</section>
